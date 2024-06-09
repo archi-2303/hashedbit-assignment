@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Number Generator</title>
+<style>
+    #result {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<p id="main">I am learning to generate a random number. I will be able to handle randomness in any of my applications that need it. Press the button to get a random number.</p>
+
+<button id="btn" onclick="displayRandomNumber()">Click Me!!</button>
+
+<p id="num"></p>
+<div id="result"></div>
+
+<script>
+function displayRandomNumber() {
+    var randomNumber = Math.floor(Math.random() * 41) - 20; 
+    var numParagraph = document.getElementById("num");
+    numParagraph.textContent = randomNumber;
+
+    var resultDiv = document.getElementById("result");
+    if (randomNumber < 0) {
+        resultDiv.textContent = "Cold";
+    } else {
+        resultDiv.textContent = "Hot";
+    }
+}
+</script>
+
+</body>
+</html>
